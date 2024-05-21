@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="practicas.css">
+</head>
+
+<body>
+    <h1>Trabajo Practico DOM</h1>
+    <h3>1-Cambia el texto de un elemento por "Programacion 1"</h3>
+    <p id="1">Parrafo que va a cambiar</p>
+    <hr>
+    <h3>2-Cambia el color de fonde de un elemento cuando se hace clic en un boton </h3>
+    <p id="2">Parrafo que va a cambiar</p>
+    <button onclick="ejercicio2()">Cambia de color</button>
+    <hr>
+    <h3>3-Añade un nuevo elemento li a una lista desordenada ol</h3>
+    <ul id="padre" class="padre"></ul>
+    <h3>4-Elimina un elemento especifico de la pagina al hacer click en el</h3>
+    <p onclick="ejercicio4(this)">click y me voy</p>
+    <p onclick="ejercicio4(this)">click y me voy</p>
+    <p onclick="ejercicio4(this)">click y me voy</p>
+    <!--this es el objeto actual, donde estoy parado-->
+    <!--<p id="4a"onclick="ejercicio4(4a)">click y me voy</p>utilizo id en vez de this-->
+    <hr>
+    <h3>5-Ocultar y muestra un elemento al hacer clic en un boton</h3>
+    <p id="5">Esta en el elemento que se oculta y mostrara</p>
+    <button onclick="ejercicio5()">Ocultar o mostrar</button>
+    <hr>
+    <h3>6-Crear un nuevo elemento div y añadelo al DOM</h3>
+    <div class="padre1" id="padre1"></div>
+    <hr>
+    <h3>7-Cambia el atributo de la fuente de una imagen.(SRC)</h3>
+    <img id="imagen1" src="assest/Flores-SF-6.avif" alt="">
+    <hr>
+    <h3>8-Cambiar dinamicamente el estilo  0de un elemento en respuesta a alguna accion, por ejemplo, al pasar el raton sobre el</h3>
+    <p id="8" onmouseover="ejercicio8a()" onmouseout="ejercicio8b()">Esto dinamico</p>
+    <hr>
+    <h3>9-Añade y quita de un elemento de un elemento en respuesta a eventos (ejemplos pasar el mouse) </h3>
+    <p id="9" class="subrayado" onmouseover="ejercicio9a()" onmouseout="ejercicio9b()">Añade o quita clase</p>
+    <hr>
+    <h3>10-</h3>
+    <script src="practicas.js"></script>
+</body>
+
+</html>
