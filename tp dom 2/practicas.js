@@ -65,10 +65,80 @@ function ejercicio8b() {
 }
 function ejercicio9a() {
     let elemento = document.getElementById("9");
-   elemento.classList.add(".subrayado")
+    elemento.classList.add("subrayado")
 }
 function ejercicio9b() {
     let elemento = document.getElementById("9");
-    elemento.classList.remove(".subrayado")
+    elemento.classList.remove("subrayado")
+}
+function ejercicio10() {
+    let elemento = document.getElementById("10");
+    elemento.classList.toggle("resaltar")
+}
+function ejercicio11() {
+    let elemento = document.getElementById("11");
+    let respuesta = confirm("¿Esta seguro que desea eliminar el elemento?")
+    respuesta ? elemento.remove() : alert("No se elimino ningun elemento")
+}
+let cont1 = 0
+function ejercicio12a() {//suma
+    let elemento = document.getElementById('12')
+    cont1++
+    elemento.textContent = " " + cont1
+}
+function ejercicio12b() {//resta
+    let elemento = document.getElementById('12')
+    cont1--
+    elemento.textContent = " " + cont1
+}
+function ejercicio12c() {//resetear
+    let elemento = document.getElementById('12')
+    cont1 = 0
+    elemento.textContent = "Cantidad de veces que hizo clic"
+}
+function ejercicio13() {
+    nombre = prompt("Nombre del label")
+    let elemento=document.getElementById("13")
+    let label=document.createElement("label")
+    label.innerHTML=" "+nombre
+    elemento.appendChild(label);
+
+    let input=document.createElement("input")
+
+    opcion=prompt("1-Texto \n2-Numerica")
+    if(opcion=1){
+
+    }
+    else if(opcion=2){
+
+    }
+    else{
+        alert("opcion incorrecta")
+    }
+
+
+
+
+
+/*
+let elenombre = document.createElement("label")
+    elenombre.textContent = " "+ nombre 
+    let elementoPadre = document.querySelector(".padre");
+    elementoPadre.appendChild(elenombre);
+
+    opcion=prompt("1-Texto \n2-Numerica")
+    if(opcion=1){
+
+    }
+    else if(opcion=2){
+
+    }
+    else{
+        alert("opcion incorrecta")
+    }
+*/
+
+    
+
 
 }
