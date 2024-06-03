@@ -8,3 +8,6 @@ img{
 .subrayado{
     text-decoration: underline;
 }
+.resaltar{
+    background-color: aqua;
+}
