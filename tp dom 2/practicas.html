@@ -59,8 +59,24 @@
     </div>
     <hr>
     <h3>13-Crear un formulario que añada dinamicamente nuevos campos al hacer clic en un boton</h3>
-    <form id="13" id="padre" class="padre"></form>
+    <form id="13"></form>
     <button onclick="ejercicio13()">Clic para crear campos</button>
+    <hr>
+    <h3>14-Lista despegable dinamica</h3>
+    <label for="categoria">Categoria</label>
+    <select id="categoria" onchange="ejercicio14()">
+        <option selected disabled>Seleccionar una Categoria</option>
+        <option value="frutas">Frutas</option>
+        <option value="vegetales">Vegetales</option>
+        <option value="animales">Animales</option>
+        <option value="cantantes">Cantantes</option>
+    </select>
+    <label for="subcategoria">Subcategoria</label>
+    <select id="subcategoria">
+        <option value="">Seleccione una Subcategoria</option>
+    </select>
+    <hr>
     <script src="practicas.js"></script>
 </body>
+
 </html>
