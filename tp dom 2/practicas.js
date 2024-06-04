@@ -81,8 +81,29 @@ function ejercicio11() {
     respuesta ? elemento.remove() : alert("No se elimino ningun elemento")
 }
 let cont1 = 0
-function ejercicio12a() {//suma
+
+function ejercicio12(parametro) {
     let elemento = document.getElementById('12')
+    let cont1 = 0
+    switch (parametro) {
+        case 'suma':
+            cont1++
+            elemento.textContent = " " + cont1
+            break;
+        case 'resta':
+            cont1--
+            elemento.textContent = " " + cont1
+
+            break;
+        case 'reset':
+            cont1 = 0
+            break;
+        default:
+            alert("error")
+    }
+}
+function ejercicio12a() {//suma
+
     cont1++
     elemento.textContent = " " + cont1
 }
@@ -93,52 +114,81 @@ function ejercicio12b() {//resta
 }
 function ejercicio12c() {//resetear
     let elemento = document.getElementById('12')
-    cont1 = 0
-    elemento.textContent = "Cantidad de veces que hizo clic"
+
 }
 function ejercicio13() {
-    nombre = prompt("Nombre del label")
-    let elemento=document.getElementById("13")
-    let label=document.createElement("label")
-    label.innerHTML=" "+nombre
-    elemento.appendChild(label);
-
-    let input=document.createElement("input")
-
-    opcion=prompt("1-Texto \n2-Numerica")
-    if(opcion=1){
-
+    let elemento = document.getElementById("13")
+    let opcion, nombre;
+    do {
+        nombre = prompt("Nombre del label")
+        if (!nombre) {
+            alert("El nombre del label no puede estar vacio")
+        }
     }
-    else if(opcion=2){
-
+    while (!nombre);
+    let label = document.createElement("label")
+    label.textContent = nombre
+    do {
+        opcion = parseInt(prompt("1-texto\n2-numero"))
+        if (opcion !== 1 && opcion !== 2) {
+            alert("ingrese 1 o 2")
+        }
     }
-    else{
-        alert("opcion incorrecta")
+    while (opcion !== 1 && opcion !== 2);
+    let input = document.createElement("input")
+    opcion === 1 ? input.type = "text" : input.type = "number"
+    elemento.append(label, input)
+}
+
+const frutas = ["Manzana", "Banana", "Cereza"];
+const vegetales = ["Zanahoria", "Cebolla", "Papa"];
+const animales = ["Perro", "Gato", "Caballo"];
+const cantantes = ["Lana del Rey", "Taylor", "Mon Laferte", "f", "g", "j"]
+function ejercicio14() {
+    //Funcion para actualizar la subcategorias en funcion de la categoria seleccionada
+    let categoria = document.getElementById("categoria").value;
+    let subcategoriaSelect = document.getElementById("subcategoria")
+    //limpia las subcategorias anteriores
+    subcategoriaSelect.innerHTML = '<option value="">Selecciones una subcategoria</option>'
+    let subcategorias;
+    //determinar el array de subcategorias basado en la categoria seleccionada
+    switch (categoria) {
+        case 'frutas':
+            subcategorias = frutas;
+            break;
+        case 'vegetales':
+            subcategorias = vegetales;
+            break;
+        case 'animales':
+            subcategorias = animales;
+            break;
+        case 'cantantes':
+            subcategorias = cantantes;
+        default:
+            subcategorias = [];
     }
-
-
-
-
-
-/*
-let elenombre = document.createElement("label")
-    elenombre.textContent = " "+ nombre 
-    let elementoPadre = document.querySelector(".padre");
-    elementoPadre.appendChild(elenombre);
-
-    opcion=prompt("1-Texto \n2-Numerica")
-    if(opcion=1){
-
+    /*
+    if (categoria === "frutas") {
+        subcategorias = frutas;
+    } else {
+        if (categoria === "vegetales") {
+            subcategorias = vegetales;
+        }
+        else {
+            if (categoria === "animales") {
+                subcategorias = animales;
+            }
+            else {
+                subcategorias = [];
+            }
+        }
     }
-    else if(opcion=2){
-
+    */
+    //agregar las nuevas subcategorias al despegable usando un bucle for
+    for (let i = 0; i < subcategorias.length; i++) {
+        let option = document.createElement("option");//crea option 
+        option.value = subcategorias[i].toLowerCase();//crea valor y pone nombre
+        option.textContent = subcategorias[i];//lo que va a leer el usuario
+        subcategoriaSelect.appendChild(option);//agrega el option al select
     }
-    else{
-        alert("opcion incorrecta")
-    }
-*/
-
-    
-
-
 }
