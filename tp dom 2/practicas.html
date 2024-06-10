@@ -76,7 +76,40 @@
         <option value="">Seleccione una Subcategoria</option>
     </select>
     <hr>
+    <h3>15-</h3>
+
+   <form action="" id="miFormulario">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" value="">
+    <br>
+    <label for="gmail">Correo Electronico</label>
+    <input type="email" id="gmail"  value="">
+    <br>
+    <label for="mensaje">Mensaje</label>
+    <textarea name="mensaje" id="mensaje"  value=""></textarea>
+    <p id="errores"></p>
+    <input type="button" value="Enviar" onclick="ejercicio15()">
     <script src="practicas.js"></script>
+
+   </form>
+   <hr>
+   <h3>16-Manejo de Eventos de Teclado</h3>
+   <p>Escribe algo en el campo de texto y presione la tecla "Enter"</p>
+   <input type="text" id="16" placeholder="Presiona 'Enter'" onkeydown="ejercicio16(event)">
+   <hr>
+   <h3>17-Añade o elimina filas de una tabla mediante botones</h3>
+   <button onclick="ejercicio17()">Crear Tablas</button>
+   <table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tBody id="tabla">
+    </tBody>
+   </table>
 </body>
 
 </html>
