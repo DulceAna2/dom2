@@ -103,6 +103,7 @@ function ejercicio12(parametro) {
     }
 }
 function ejercicio12a() {//suma
+    let elemento = document.getElementById('12')
 
     cont1++
     elemento.textContent = " " + cont1
@@ -114,7 +115,7 @@ function ejercicio12b() {//resta
 }
 function ejercicio12c() {//resetear
     let elemento = document.getElementById('12')
-
+ elemento.textContent = "Cantidad de veces que hizo clic"
 }
 function ejercicio13() {
     let elemento = document.getElementById("13")
