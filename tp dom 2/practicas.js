@@ -115,7 +115,7 @@ function ejercicio12b() {//resta
 }
 function ejercicio12c() {//resetear
     let elemento = document.getElementById('12')
- elemento.textContent = "Cantidad de veces que hizo clic"
+    elemento.textContent = "Cantidad de veces que hizo clic"
 }
 function ejercicio13() {
     let elemento = document.getElementById("13")
@@ -192,4 +192,97 @@ function ejercicio14() {
         option.textContent = subcategorias[i];//lo que va a leer el usuario
         subcategoriaSelect.appendChild(option);//agrega el option al select
     }
+}
+function ejercicio15() {
+    let nombre = document.getElementById("nombre").value
+    let gmail = document.getElementById("gmail").value
+    let mensaje = document.getElementById("mensaje").value
+    // obtener el div para mostrar el error
+    let errores = document.getElementById("errores")
+    errores.innerHTML = "";//blanqueo
+    //validar que los campos no esten vacios
+    let parrafo = document.getElementById("parrafo")
+    console.log(nombre)
+
+    if (nombre === "") {
+        errores.innerHTML += "El nombre es obligatorio.<br>";
+    }
+    else {
+        if (nombre.length < 10) {
+            errores.innerHTML += "El nombre debe tener al menos diez caracteres.Actualmente tiene " + nombre.length + "<br>";
+        }
+        else {
+            errores.innerHTML += "El tiene mas de diez caracteres.<br>";
+        }
+    }
+    if (gmail === "") {
+        errores.innerHTML += "El Gmail es obligatorio.<br>";
+    }
+    if (mensaje === "") {
+        errores.innerHTML += "El Mensaje es obligatorio.<br>";
+    }
+}
+function ejercicio16(event) {
+    console.log("se esta ejecutando un evento")
+    console.log("presiono la tecla" + event.key)
+    //verificar si la tecla presionada es "enter"
+    if (event.key === "Enter") {
+        //Mostrar una alerta
+        let valor = document.getElementById("16").value;
+        alert("¡Has presionado la tecla Enter! enviaste:" + valor)
+
+    }
+}
+function ejercicio17() {
+    let elemento = document.getElementById("tabla")
+    //let apellido=prompt("¿Que Apellido desea agregar?")
+    let ttrr = document.createElement("tr")
+    elemento.append(ttrr)
+//NOMBRE
+    let nombre = prompt("¿Que nombre desea agregar?")
+   do{
+    if (!nombre) {
+        alert("El nombre no puede estar vacio")
+    }
+   }
+    while (!nombre);
+    let ntd = document.createElement("td")
+    ntd.innerHTML = nombre
+//APELLIDO
+    apellido = prompt("¿Que apellido desea agregar?")
+    do{
+        if (!apellido) {
+            alert("El apellido no puede estar vacio")
+        }
+    }
+
+    while (!apellido);
+    let atd = document.createElement("td")
+    atd.innerHTML = apellido
+    //ELIMINAR
+
+
+    let boton = document.createElement("button")
+    boton.textContent="X"
+
+    
+    
+
+
+
+
+
+    ttrr.append(ntd, atd,boton)
+
+
+    /**
+      do {
+         let apellido = prompt("¿Que Apellido desea agregar?")
+         if (!apellido) {
+             alert("El apellido no puede estar vacio")
+         }
+     }
+     while (!apellido);
+     let atd = document.createElement("td")
+     */
 }
