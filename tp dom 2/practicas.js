@@ -15,8 +15,8 @@ function ejercicio3() {
     elementoPadre.appendChild(lis1);
     cont++
 }
-function ejercicio4(elemento) {
-    elemento.remove();
+function ejercicio4(p) {
+    p.remove();
 }
 /*eliminar mediante id
 function eliminar(id){
@@ -93,7 +93,6 @@ function ejercicio12(parametro) {
         case 'resta':
             cont1--
             elemento.textContent = " " + cont1
-
             break;
         case 'reset':
             cont1 = 0
@@ -234,55 +233,77 @@ function ejercicio16(event) {
     }
 }
 function ejercicio17() {
-    let elemento = document.getElementById("tabla")
-    //let apellido=prompt("¿Que Apellido desea agregar?")
-    let ttrr = document.createElement("tr")
+    let elemento = document.getElementById("tabla")    //llamar a tabla
+    let ttrr = document.createElement("tr")//crear tr
     elemento.append(ttrr)
-//NOMBRE
-    let nombre = prompt("¿Que nombre desea agregar?")
-   do{
-    if (!nombre) {
-        alert("El nombre no puede estar vacio")
-    }
-   }
-    while (!nombre);
-    let ntd = document.createElement("td")
-    ntd.innerHTML = nombre
-//APELLIDO
-    apellido = prompt("¿Que apellido desea agregar?")
-    do{
-        if (!apellido) {
-            alert("El apellido no puede estar vacio")
+
+    let nombre, apellido
+    do {
+        nombre = prompt("¿Que nombre desea agregar?")
+        apellido = prompt("¿Que apellido desea agregar?")
+
+        if (!nombre | !apellido) {
+            alert("La celda no puede estar vacia")
         }
     }
-
+    //NOMBRE
+    while (!nombre);
+    let cel1 = document.createElement("td")
+    cel1.innerHTML = nombre
+    //Apellido
     while (!apellido);
-    let atd = document.createElement("td")
-    atd.innerHTML = apellido
+    let cel2 = document.createElement("td")
+    cel2.innerHTML = apellido
     //ELIMINAR
-
-
     let boton = document.createElement("button")
-    boton.textContent="X"
-
-    
-    
-
-
-
-
-
-    ttrr.append(ntd, atd,boton)
-
-
-    /**
-      do {
-         let apellido = prompt("¿Que Apellido desea agregar?")
-         if (!apellido) {
-             alert("El apellido no puede estar vacio")
-         }
-     }
-     while (!apellido);
-     let atd = document.createElement("td")
-     */
+    boton.textContent = "X"
+    boton.addEventListener('click', function () {
+        ttrr.remove();
+    })
+    let cel3 = document.createElement("td")
+    cel3.appendChild(boton)
+    ttrr.append(cel1, cel2, cel3)
 }
+function ejercicio18() {
+    let elemento = document.getElementById("18b").value
+    let p = document.getElementById("18a")
+    if (elemento.length) {
+        p.innerHTML = "Caracteres: " + elemento.length
+    }
+    else {
+        p.innerHTML = "Contador de Caracteres:"
+    }
+    //en este ejericio se utiliza oninput y no keydown porque el keydown se ejecuta antes que el input guarde el valor eso crea
+}
+function ejercicio19() {
+    let p = document.querySelectorAll("p");
+    cantidadparrafo = p.length;
+    for (i = 0; i < cantidadparrafo; i++) {
+        p[i].remove();
+    }
+    alert(cantidadparrafo + ".Parrafos fueron eliminados ");
+    /*
+      getElementByClass(actualizacion dinamica)
+      getElementByTagName(actualizacion dinamica)
+      querySelectorAll(estatico)
+   */
+}
+
+    let contador1 = 0;
+    const imagenes = document.querySelectorAll(".imagenes");
+    function mostrarImagen() {
+        imagenes.forEach((img, index) => {
+            img.style.display = (index === contador1)? 'block' : 'none';
+        });
+    }
+    function siguienteImagen() {
+        contador1 = (contador1 + 1) % imagenes.length;
+        console.log(contador1)
+        mostrarImagen();
+    }
+    function anteriorImagen() {
+        contador1 = (contador1 - 1 + imagenes.length) % imagenes.length;
+        console.log(contador1)
+        mostrarImagen()
+    }
+
